@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دعوة عقد قران</title>
+  <style>
+    .fade {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .show {
+      opacity: 1;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #87ceeb;
+      font-family: 'Arial', sans-serif;
+    }
+    .cloud {
+      position: absolute;
+      animation: floatClouds 60s linear infinite;
+      width: 200px;
+      opacity: 0.8;
+    }
+    @keyframes floatClouds {
+      0% { transform: translateX(-300px); }
+      100% { transform: translateX(100vw); }
+    }
+    .plane {
+      position: absolute;
+      width: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 1s ease-in-out;
+    }
+    .section {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: #fff;
+      background: transparent;
+      text-align: center;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <img src="cloud.png" class="cloud" style="top:10%; left:-200px; animation-delay: 0s;">
+  <img src="cloud.png" class="cloud" style="top:40%; left:-300px; animation-delay: 10s;">
+  <img src="cloud.png" class="cloud" style="top:70%; left:-400px; animation-delay: 20s;">
+  <img src="plane.png" class="plane" id="plane">
+
+  <div class="section fade show" id="section0">
+    <div>يشرفنا حضوركم في عقد قران أخي عثمان كمال و كبرياء أسامة</div>
+  </div>
+  <div class="section fade show" style="display:none;" id="section1">
+    <div>كما في حفل الزفاف الذي يقام يوم 20/6<br>With loving hearts we make the impossible possible</div>
+  </div>
+
+  <script>
+
+  const plane = document.getElementById('plane');
+  const sections = [
+    document.getElementById('section0'),
+    document.getElementById('section1'),
+    document.getElementById('section2'),
+    document.getElementById('section3')
+  ];
+  let currentSection = 0;
+
+  function showSection(index) {
+    sections.forEach((sec, i) => {
+      if (i === index) {
+        sec.classList.add('show');
+      } else {
+        sec.classList.remove('show');
+      }
+    });
+  }
+
+  document.body.addEventListener('click', (e) => {
+    const x = e.clientX;
+    const width = window.innerWidth;
+
+    if (x > width / 2 && currentSection < sections.length - 1) {
+      currentSection++;
+      plane.style.transform = `translate(${100 * currentSection}px, -50%) rotate(10deg)`;
+      showSection(currentSection);
+    } else if (x < width / 2 && currentSection > 0) {
+      currentSection--;
+      plane.style.transform = `translate(${100 * currentSection}px, -50%) rotate(-10deg)`;
+      showSection(currentSection);
+    }
+  });
+
+
+    const plane = document.getElementById('plane');
+    const sections = [
+    document.getElementById('section2'),
+    document.getElementById('section3'),
+      document.getElementById('section0'),
+      document.getElementById('section1')
+    ];
+    let currentSection = 0;
+
+    function showSection(index) {
+      sections.forEach((sec, i) => {
+        sec.style.display = i === index ? 'flex' : 'none';
+      });
+    }
+
+    document.body.addEventListener('click', (e) => {
+      const x = e.clientX;
+      const width = window.innerWidth;
+
+      if (x > width / 2 && currentSection < sections.length - 1) {
+        currentSection++;
+        plane.style.transform = `translate(${100 * currentSection}px, -50%) rotate(10deg)`;
+        showSection(currentSection);
+      } else if (x < width / 2 && currentSection > 0) {
+        currentSection--;
+        plane.style.transform = `translate(${100 * currentSection}px, -50%) rotate(-10deg)`;
+        showSection(currentSection);
+      }
+    });
+  </script>
+
+  <!-- القسم الثالث -->
+  <div class="section fade show" style="display:none;" id="section2">
+    <img src="section2.jpg" alt="صورة أخي المفضل">
+    <div style="margin-top: 20px;">أخي المفضل</div>
+  </div>
+
+  <!-- القسم الرابع -->
+  <div class="section fade show" style="display:none;" id="section3">
+    <img src="section3.jpg" alt="صورة أنت الأجمل">
+    <div style="margin-top: 20px;">أنت الأجمل</div>
+  </div>
+</body>
+
+</html>
+
+    <div style="margin-top: 20px; color: #ccc;">[هنا يمكن إضافة صورة]</div>
+  </div>
+
+  <!-- القسم الثالث -->
+  <div class="section fade show" style="display:none;" id="section2">
+    <img src="section2.jpg" alt="صورة أخي المفضل">
+    <div style="margin-top: 20px;">أخي المفضل</div>
+  </div>
+
+  <!-- القسم الرابع -->
+  <div class="section fade show" style="display:none;" id="section3">
+    <img src="section3.jpg" alt="صورة أنت الأجمل">
+    <div style="margin-top: 20px;">أنت الأجمل</div>
+  </div>
+</body>
+
+
+<script>
+
+  const plane = document.getElementById('plane');
+  const sections = [
+    document.getElementById('section0'),
+    document.getElementById('section1'),
+    document.getElementById('section2'),
+    document.getElementById('section3')
+  ];
+  let currentSection = 0;
+
+  function showSection(index) {
+    sections.forEach((sec, i) => {
+      if (i === index) {
+        sec.classList.add('show');
+      } else {
+        sec.classList.remove('show');
+      }
+    });
+  }
+
+  document.body.addEventListener('click', (e) => {
+    const x = e.clientX;
+    const width = window.innerWidth;
+
+    if (x > width / 2 && currentSection < sections.length - 1) {
+      currentSection++;
+      plane.style.transform = `translate(${100 * currentSection}px, -50%) rotate(10deg)`;
+      showSection(currentSection);
+    } else if (x < width / 2 && currentSection > 0) {
+      currentSection--;
+      plane.style.transform = `translate(${100 * currentSection}px, -50%) rotate(-10deg)`;
+      showSection(currentSection);
+    }
+  });
+
+
+  const plane = document.getElementById('plane');
+  const sections = [
+    document.getElementById('section2'),
+    document.getElementById('section3'),
+    document.getElementById('section0'),
+    document.getElementById('section1')
+  ];
+  let currentSection = 0;
+
+  function showSection(index) {
+    sections.forEach((sec, i) => {
+      sec.style.display = i === index ? 'flex' : 'none';
+    });
+  }
+
+  document.body.addEventListener('click', (e) => {
+    const x = e.clientX;
+    const width = window.innerWidth;
+
+    if (x > width / 2 && currentSection < sections.length - 1) {
+      currentSection++;
+      plane.style.transform = `translate(${100 * currentSection}px, -50%) rotate(10deg)`;
+      showSection(currentSection);
+    } else if (x < width / 2 && currentSection > 0) {
+      currentSection--;
+      plane.style.transform = `translate(${100 * currentSection}px, -50%) rotate(-10deg)`;
+      showSection(currentSection);
+    }
+  });
+</script>
+</html>
